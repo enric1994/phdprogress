@@ -2,4 +2,6 @@
 
 My PhD progress bar
 
+Usage: `docker run --rm enric1994/phdprogress`
+
 ![alt text](img.png)
