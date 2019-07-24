@@ -1,16 +1,16 @@
-from time import sleep
-import sys
 from datetime import date
+from time import sleep
+from tqdm import tqdm
 
 today = date.today()
-start_date = date(2018,12,1)
-end_date = date(2023,2,1)
+start_date = date(2019,1,28)
+end_date = date(2023,1,28)
 total = end_date - start_date
 completed = today - start_date
-progress = float(completed.days)/float(total.days)
+progress = int(completed.days)
 
-print('PhD progress:')
-for i in range(1+int(100 * progress)):
-    print("\r[%-100s] %d%%" % ('='*i, i), end='\r')
-    sleep(0.05)
-
+print("Enric Moreu's PhD progress:")
+for i in tqdm(range(0,365*4), bar_format='{n}/{total} days ({percentage:2.0f}%) [{bar}]'):
+    sleep(0.01)
+    if i > progress: 
+        break
